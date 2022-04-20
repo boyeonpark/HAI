@@ -16,14 +16,14 @@ pacman::p_load("tidyverse","rio")
 # sentiment(mytext)
 
 
-df <- read.csv(file = 'template.csv')
+df <- read.csv(file = 'df_f.csv')
 
 head(df)
 
 #mytext <- get_sentences(mytext)
-sentiment(df$Sentence)
+sentiment(df$sentence)
 
-df<-df%>% mutate(df,'SentimentR'=sentiment(df$Sentence))
+df<-df%>% mutate(df,'SentimentR'=sentiment(df$sentence))
 
 #write.xlsx(df, file = "df_sentimentr.xlsx")
 write.csv(df,"df_sentimentr.csv", row.names = FALSE)
